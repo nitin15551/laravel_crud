@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('employee', function (Blueprint $table) {
             $table->id();
             $table->text('name')->nullable(false);
-            $table->bigInteger('phone')->unique();
+            $table->text('phone')->unique();
             $table->text('email')->unique();
             $table->enum('gender',['M','F']);
             $table->timestamps();

@@ -18,10 +18,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+/*
 Route::get('/employee',[EmployeeController::class,'index'])->name('employee.index');
 Route::get('/employee/add',[EmployeeController::class,'create'])->name('employee.create');
 Route::post('/employee/store',[EmployeeController::class,'store'])->name('employee.store');
 Route::get('/employee/edit/{id}',[EmployeeController::class,'edit'])->name('employee.edit');
 Route::post('/employee/update/{id}',[EmployeeController::class,'update'])->name('employee.update');
 Route::get('/employee/delete/{id}',[EmployeeController::class,'destroy'])->name('employee.delete');
+*/
+
+Route::group(['prefix'=>'/employee'],function (){
+    Route::get('',[EmployeeController::class,'index'])->name('employee.index');
+    Route::get('/add',[EmployeeController::class,'create'])->name('employee.create');
+    Route::post('/store',[EmployeeController::class,'store'])->name('employee.store');
+    Route::get('/edit/{id}',[EmployeeController::class,'edit'])->name('employee.edit');
+    Route::post('/update/{id}',[EmployeeController::class,'update'])->name('employee.update');
+    Route::get('/delete/{id}',[EmployeeController::class,'destroy'])->name('employee.delete');
+});
+
+

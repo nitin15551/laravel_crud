@@ -42,5 +42,7 @@
         @endforeach
         </tbody>
     </table>
+    {{ $Employees->links('pagination::bootstrap-5') }}
+
 </div>
 

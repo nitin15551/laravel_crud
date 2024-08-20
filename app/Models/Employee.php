@@ -14,4 +14,7 @@ class Employee extends Model
 
     protected $fillable = ['name','phone','email'];
 
+    public function setNameAttribute($value){
+        $this->attributes['name'] = Ucwords($value);
+    }
 }

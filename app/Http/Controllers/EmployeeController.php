@@ -11,7 +11,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $Employees = Employee::all();
+      //  $Employees = Employee::all(); // All records are fetch
+        $Employees = Employee::paginate(5); // Records are fetch by pagination
         $data = compact('Employees');
         return view('employee.index')->with($data);
     }
